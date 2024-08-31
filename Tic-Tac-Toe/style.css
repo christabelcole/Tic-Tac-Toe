@@ -12,6 +12,7 @@
 body {
   color: var(--orange);
   font-family: 'Finger Paint', cursive;
+  cursor: grab;
 }
 h1 {
   font-size: 54px;
@@ -27,7 +28,7 @@ h1 {
   flex-direction: column;
   background-color: #37505C;
 }
-#gameboard {
+#gamegrid {
   width: 300px;
   display: flex;
   flex-wrap: wrap;

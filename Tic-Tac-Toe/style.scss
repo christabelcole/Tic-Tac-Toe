@@ -1,48 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$color-orange: #F2C14E;
+$color-winner: #2d414b;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: #8c52ff;
-}
-section {
-    text-align: center;
-    border-radius: 10px;
-    width: 400px;
-    margin: auto;
-    background-color: #fff;
-    margin-top: 75px;
-    box-shadow: 0px 10px 36px 16px rgba(0,0,0,0.1);
-}
-.game--title {
-    padding-top: 20px;
-}
-.game--container {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    width: 150px;
-    margin: 120px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-.cell {
-    font-family: "Poppins", sans-serif;
-    width: 50px;
-    height: 50px;
-    box-shadow: 0 0 0 1px #333333;
-    border: 1px solid #333333;
-    cursor: pointer;
-    line-height: 50px;
-    font-size: 20px;
-}
-button {
-    margin-bottom: 20px;
-    height: 30px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #8c52ff;
-    cursor: pointer;
-}
-button:hover {
-    transition: 0.25s;
-    background-color: #c1a2fe;
+  color: $color-orange;
+  font-family: 'Finger Paint', cursive;
+  cursor: grab;
+
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #37505C;
+    
+    &__title {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    &__button {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background-color: $color-orange;
+      color: #333;
+      border: 1px solid $color-orange;
+      font-size: 1.125rem;
+      transition: transform 0.2s;
+      font-weight: 600;
+
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-0.125rem);
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 2px;
+      margin-top: 2.5rem;
+    }
+
+    &__box {
+      height: 100px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-orange;
+      font-size: 4rem;
+      border: 2px solid transparent;
+      transition: background-color 0.3s;
+
+      &:nth-child(3n) {
+        border-right: none;
+      }
+
+      &:nth-child(n + 7) {
+        border-bottom: none;
+      }
+    }
+  }
 }

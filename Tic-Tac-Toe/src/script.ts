@@ -1,11 +1,8 @@
-import './style.css';
 // Select DOM elements
-const statusDisplay: HTMLElement | null =
-  document.querySelector(".game__title");
-const restartButton: HTMLElement | null = document.querySelector("#restartBtn");
-const gameGrid: NodeListOf<HTMLElement> =
-  document.querySelectorAll(".game__box");
-console.log("hello");
+const statusDisplay: HTMLElement | null = document.querySelector('.game__title');
+const restartButton: HTMLElement | null = document.querySelector('#restartBtn');
+const gameGrid: NodeListOf<HTMLElement> = document.querySelectorAll('.game__box');
+
 // Define initial game state and variables
 let gameActive: boolean = true;
 let currentPlayer: string = "X";
@@ -22,13 +19,11 @@ if (statusDisplay) {
 }
 
 // Add event listeners to cells and restart button
-gameGrid.forEach((cell) =>
-  cell.addEventListener("click", (event: Event) =>
-    handleCellClick(event as MouseEvent)
-  )
+gameGrid.forEach(cell => 
+  cell.addEventListener('click', (event: Event) => handleCellClick(event as MouseEvent))
 );
 if (restartButton) {
-  restartButton.addEventListener("click", handleRestartGame);
+  restartButton.addEventListener('click', handleRestartGame);
 }
 
 // Handle cell click events
@@ -46,10 +41,7 @@ function handleCellClick(clickedCellEvent: MouseEvent): void {
 }
 
 // Update game state and UI when a cell is played
-function handleCellPlayed(
-  clickedCell: HTMLElement,
-  clickedCellIndex: number
-): void {
+function handleCellPlayed(clickedCell: HTMLElement, clickedCellIndex: number): void {
   gameState[clickedCellIndex] = currentPlayer;
   clickedCell.innerHTML = currentPlayer;
 }
@@ -63,7 +55,7 @@ const winningConditions: number[][] = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6],
+  [2, 4, 6]
 ];
 
 // Validate the result of the game
@@ -76,7 +68,7 @@ function handleResultValidation(): void {
     const b: string = gameState[winCondition[1]];
     const c: string = gameState[winCondition[2]];
 
-    if (a === "" || b === "" || c === "") {
+    if (a === '' || b === '' || c === '') {
       continue;
     }
 
@@ -94,7 +86,7 @@ function handleResultValidation(): void {
     return;
   }
 
-  let roundDraw: boolean = !gameState.some((cell) => cell === "");
+  let roundDraw: boolean = !gameState.some(cell => cell === "");
   if (roundDraw) {
     if (statusDisplay) {
       statusDisplay.innerHTML = drawMessage();
@@ -122,5 +114,5 @@ function handleRestartGame(): void {
   if (statusDisplay) {
     statusDisplay.innerHTML = currentPlayerTurn();
   }
-  gameGrid.forEach((cell) => (cell.innerHTML = ""));
+  gameGrid.forEach(cell => cell.innerHTML = "");
 }

@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
-    rel="stylesheet"
-  />
-</head>
-<body>
-  <div class="game">
-    <h1 class="game__title" id="playerText">Tic Tac Toe</h1>
-    <button class="game__button" id="restartBtn">Restart</button>
-    <div class="game__grid" id="gamegrid">
-      <div class="game__box" id="0"></div>
-      <div class="game__box" id="1"></div>
-      <div class="game__box" id="2"></div>
-      <div class="game__box" id="3"></div>
-      <div class="game__box" id="4"></div>
-      <div class="game__box" id="5"></div>
-      <div class="game__box" id="6"></div>
-      <div class="game__box" id="7"></div>
-      <div class="game__box" id="8"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <!-- <link rel="stylesheet" href="./src/style.css" /> -->
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="game__title">Tic Tac Toe</h1>
+      <button class="restart__button" id="restartBtn">Restart</button>
+
+      <div id="game__grid">
+        <div class="game__box" id="0"></div>
+        <div class="game__box" id="1"></div>
+        <div class="game__box" id="2"></div>
+        <div class="game__box" id="3"></div>
+        <div class="game__box" id="4"></div>
+        <div class="game__box" id="5"></div>
+        <div class="game__box" id="6"></div>
+        <div class="game__box" id="7"></div>
+        <div class="game__box" id="8"></div>
+      </div>
     </div>
-  </div>
-  <script src="script.ts"></script>
-</body>
+    <script src="./src/main.ts"></script>
+  </body>
 </html>

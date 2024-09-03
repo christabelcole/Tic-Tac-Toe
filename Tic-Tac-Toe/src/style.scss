@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");
 
+/* Base styles for the body */
 body {
-    font-family: 'Finger Paint', cursive;
+    font-family: "Finger Paint", cursive;
     cursor: grab;
-    background-color:black;
-    color: #F2C14E;
+    background-color: black;
+    color: #f2c14e;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,12 +14,13 @@ body {
     height: 100vh;
 }
 
+/* Base styles for the container */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: black;
     border-radius: 10px;
     box-shadow: 0px 10px 36px 16px rgba(0, 0, 0, 0.1);
 }
@@ -27,14 +29,19 @@ body {
     font-size: 2.5rem;
     text-transform: uppercase;
     margin: 0.5rem 0;
+    
+}
+
+.game__main-title {
+    color: white;
 }
 
 .restart__button {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: #F2C14E;
+    background-color: #f2c14e;
     color: #333;
-    border: 1px solid #F2C14E;
+    border: 1px solid #f2c14e;
     font-size: 1.125rem;
     transition: transform 0.2s;
     font-weight: 600;
@@ -48,29 +55,76 @@ body {
 
 #game__grid {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 160px) ;
     grid-gap: 2px;
     margin-top: 2.5rem;
-    border: solid black;
 }
 
 .game__box {
-    height: 100px;
-    width: 100px;
+    height: 160px;
+    width: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 4rem;
-    border: 2px solid #333;
-    color: #F2C14E;
+    color: #f2c14e;
     transition: background-color 0.3s;
+    background-color: white;
 }
 
-/* Styling specific boxes */
-.game__box:nth-child(3n) {
-    border-right: none;
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 768px (tablets and large phones) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .game__title {
+        font-size: 2rem;
+    }
+
+    #game__grid {
+        grid-template-columns: repeat(3, 80px);
+    }
+
+    .game__box {
+        height: 80px;
+        width: 80px;
+        font-size: 3rem;
+    }
+
+    .restart__button {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }
 
-.game__box:nth-child(n + 7) {
-    border-bottom: none;
+/* For screens smaller than 480px (phones) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .game__title {
+        font-size: 1.5rem;
+    }
+
+    #game__grid {
+        grid-template-columns: repeat(3, 60px);
+    }
+
+    .game__box {
+        height: 60px;
+        width: 60px;
+        font-size: 2rem;
+    }
+
+    .restart__button {
+        font-size: 0.875rem;
+        padding: 0.4rem;
+    }
 }

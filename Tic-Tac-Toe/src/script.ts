@@ -9,7 +9,7 @@ let currentPlayer: string = "X";
 let gameState: string[] = ["", "", "", "", "", "", "", "", ""];
 
 // Define messages
-const winningMessage = (): string => `Player ${currentPlayer} has won!`;
+const winningMessage = (): string => `Player ${currentPlayer}is better than you and has won!`;
 const drawMessage = (): string => `Game ended in a draw!`;
 const currentPlayerTurn = (): string => `It's ${currentPlayer}'s turn`;
 
